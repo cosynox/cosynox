@@ -4,6 +4,7 @@
 <html lang="en">
     <head>
         <link href="style.css" rel="stylesheet">
+        <script src="scripts.js"></script>
         <title>Gerd Koslowski</title>
     </head>
     <body class="centered">
@@ -45,20 +46,6 @@ int main (void)
                                     <input autocomplete="off" autofocus id="name" name="name" placeholder="Name" type="text">
                                     <input type="submit">
                                 </form>
-                                <script>
-                                    
-                                    function greet(event)
-                                    {
-                                        let name = document.querySelector("#name").value;
-                                        let antwort = document.querySelector("#antwort");
-                                        antwort.innerText = 'Hello, ' + name ;
-                                        event.preventDefault();
-                                    }
-
-                                    let form = document.querySelector("form");
-                                    form.addEventListener("submit", greet);
-
-                                </script>
                             </p>
                             <p id="antwort"></p>
                         </td>
