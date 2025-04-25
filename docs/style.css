@@ -1,0 +1,36 @@
+/*
+    CSS File to style my Homepage
+*/
+.centered
+{
+    text-align: center;
+}
+
+.large
+{
+    font-size: large;
+}
+
+.medium
+{
+    font-size: medium;
+}
+
+.small
+{
+    font-size:small;
+}
+
+pre 
+{ 
+    font-family: monospace; 
+}
+
+code 
+{ 
+    font-family: Consolas,"courier new";
+    color: crimson;
+    padding: 2px;
+    font-size: 105%;
+}
+
