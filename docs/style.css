@@ -8,17 +8,17 @@
 
 .large
 {
-    font-size: large;
+    font-size: 150%;
 }
 
 .medium
 {
-    font-size: medium;
+    font-size: 125%;
 }
 
 .small
 {
-    font-size:small;
+    font-size:50%;
 }
 
 pre 
@@ -29,8 +29,16 @@ pre
 code 
 { 
     font-family: Consolas,"courier new";
-    color: crimson;
-    padding: 2px;
+    color: Blue;
+    padding: 4px;
     font-size: 105%;
+}
+
+body
+{
+    font-family: Helvetica, sans-serif;
+    color: #000;
+    padding: 8px;
+    font-size: 125%;
 }
 
