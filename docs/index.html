@@ -7,49 +7,62 @@
         <script src="scripts.js"></script>
         <title>Gerd Koslowski</title>
     </head>
-    <body class="centered">
-        <header class="large">
+    <body>
+        <header>
             Gerd Koslowski
         </header>
-        <main class="medium">
-            Welcome to my home page!
-            <table>
-                <tr>
-                    <td>
-                        <pre><code>
+        <main>
+
+            Welcome to my home page.
+
+
+            <p>
+<!-- Here comes the hello world c-program -->
+                <pre><code>
 #include &#060;stdio.h&#062;
 
 int main (void)
 {
     printf("Hello, world\n");
 }
-                        </code></pre>
+                </code></pre>
+<!-- End of the program code -->
+            </p>
 
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <P>
-                            So let me first greet you as a visitor.
-                            In order to address you with your name,
-                            please enter it in the following form.
-                        </P>
-                    </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <p>
-                                <form >
-                                    <input autocomplete="off" autofocus id="name" name="name" placeholder="Name" type="text">
-                                    <input type="submit">
-                                </form>
-                            </p>
-                            <p id="antwort"></p>
-                        </td>
-                        </tr>
-                        </table>
+            <p>
+                So let me first greet you as a visitor.
+                In order to address you with your name,
+                please enter it in the following form.
+            </p>
+
+            <p>
+                <form >
+                    <input  autocomplete="off" 
+                            autofocus id="name" 
+                            name="name" 
+                            placeholder="Name" 
+                            type="text">
+
+                    <input type="submit">
+
+                </form>
+            </p>
+            <p id="antwort"></p>
+            <p>
+                But, of course, you are not here to let you be greeted by this homepage.
+                I suppose, that you are here, because you'd like to know something more about me.
+                So I have here a litte menu that you can choose from:
+                <ul>
+                    <li><a href="curriculum.html">Curriculum vitae</a></li>
+                    <li><a href="where.html">Where I am living</a></li>
+                    <li><a href="hobbies.html">About Hobbies</a></li>
+                    <li><a href="more.html">More interesting things about me</a></li>
+                    <li><a href="shell.html">Some Linux shell-scripts</a></li>
+                    <li><a href="impressum.html">Impressum (german)</a></li>
+                </ul>
+            </p>
         </main>
-        <footer class="small">
+        <footer>
             Gerd Koslowski, Bahnhofstr. 37a, 76829 Landau, Germany
             Tel. (+49) 0177-8502966
         </footer>
