@@ -13,6 +13,53 @@
                 Some Linux shell scripts
             </header>
             <main>
+                <p>&nbsp;</p>
+                <h4>
+                    Search for duplicate files
+                </h4>
+                <p>
+                    At first, I present a linux shell script to search for 
+                    duplicate files based on their content. The idea is to 
+                    calculate the SHA256 Hash from the file content. If two
+                    files have the same SHA256 Hash then they are supposed
+                    to be identical.
+                </p>
+                <p>
+                <pre>
+                    <code>
+#! /bin/bash
+# usage: dupsearch pattern
+# where pattern can be *.jpg or *.png or *.mp3 or something else
+# creates 2 temporary files
+
+tmpfile1=$(mktemp /tmp/dupjpg.XXXXXX)
+tmpfile2=$(mktemp /tmp/dupjpg.XXXXXX)
+
+# connects the files with filedescriptor 3 and 4
+exec 3>"$tmpfile1"
+exec 4>"$tmpfile2"
+
+# finds the files, calculates the SHA256-hash and sorts the file
+find . -name "$1" 2>/dev/null|xargs sha256sum -b 2>/dev/null|sort >&3 
+
+# the sorted file is in order of the hash codes, but the codes 
+# are together with the filenames. cut the codes from the filenames
+# and leave only duplicate hash codes. save them to file tmpfile2
+cut -d ' ' -f 1 "$tmpfile1"|uniq -d >&4
+
+# read the codes from the file and look for the filenames
+# the filenames are in in the position beginning with position 62 in 
+# the file
+grep -f "$tmpfile2" "$tmpfile1" | cut -c 67-
+
+# delete the temporary files and close the filedescriptors
+rm "$tmpfile1"
+rm "$tmpfile2"
+exec 3>&-
+exec 4>&-
+                    </code>
+                </pre>
+                </p>
             </main>
             <footer>
                 <div class="medium">
