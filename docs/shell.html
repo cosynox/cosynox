@@ -60,6 +60,40 @@ exec 4>&-
                     </code>
                 </pre>
                 </p>
+                <p>&nbsp;</p>
+                <h4>
+                    Display a slideshow from a playlist
+                </h4>
+                <p>
+                    This script displays a slideshow from a playlist
+                    with filenames, line by line, in a file.
+                    The interesting in the file is, that /dev/stdin
+                    is opened as a filedescriptor 3 and despite
+                    the input for the while loop is redirected to 
+                    the file from which the playlist is read, one
+                    can get keystrokes for read from /dev/stdin.
+                    So you have two input streams.
+                    The script is else rather straightforward. 
+                    The pictures are displayed with feh.
+                </p>
+                <p>
+                    <pre>
+                        <code>                          
+#! /bin/bash
+
+exec 3< /dev/stdin
+
+read -n 1 -p "Press any key to begin slideshow";
+while IFS= read -r line;
+do
+        echo $line
+        feh -g 1024x800 --scale-down $line
+        read -n 1 -p "Press any key to continue ^C to exit" <&3
+done < $1
+                            
+                        </code>
+                    </pre>
+                </p>
             </main>
             <footer>
                 <div class="medium">
