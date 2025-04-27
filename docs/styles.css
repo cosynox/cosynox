@@ -94,11 +94,17 @@ body
 
 }
 
-li[class] {
+li[class] 
+{
     font-size: 100%;
-  }
+}
 
-  li[class="a"] {
+li[class="a"] 
+{
     color: #FF0000;
-  }
+}
 
+a[class="grayed"]
+{
+    color: silver;
+}
