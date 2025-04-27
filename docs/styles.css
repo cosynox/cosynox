@@ -56,6 +56,11 @@ header
     line-height: 32pt;
 }
 
+main
+{
+    font-size: 12pt;
+    line-height: 24pt;
+}
 
 footer
 {
