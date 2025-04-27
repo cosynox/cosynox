@@ -48,7 +48,7 @@ find . -name "$1" 2>/dev/null|xargs sha256sum -b 2>/dev/null|sort >&3
 cut -d ' ' -f 1 "$tmpfile1"|uniq -d >&4
 
 # read the codes from the file and look for the filenames
-# the filenames are in in the position beginning with position 62 in 
+# the filenames are in in the position beginning after position 67 in 
 # the file
 grep -f "$tmpfile2" "$tmpfile1" | cut -c 67-
 
