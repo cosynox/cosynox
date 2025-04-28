@@ -15,7 +15,8 @@
 {
     text-align: right;
 }
-.large
+.large                  /* these definitions I have left */
+                        /* as a reference */
 {
     font-size: 24pt;
     line-height: 32pt;
@@ -40,7 +41,8 @@
 */
 pre
 {
-    overflow-y:hidden;
+    overflow-y:hidden;                  /* this is because bootstrap causes a */
+                                        /* big mess in my code tags */
     box-shadow: none;
     border: none;
     font-family: "Courier New",monospace;
@@ -53,28 +55,26 @@ pre
 header
 {
     font-size: 24pt;
-    line-height: 32pt;
+    line-height: 32pt; /* 1.5 rows spaced */
 }
 
 main
 {
     font-size: 12pt;
-    line-height: 24pt;
+    line-height: 24pt; /* 1.5 rows spaced */
 }
 
 footer
 {
-    font-size:8pt;
-    line-height: 16pt;
+    font-size: 12pt;
+    line-height: 15pt; /* single spaced */
 }
-
-
 
 code
 {
-    overflow-y:hidden;
-    font-family: "Courier New",monospace;
-    font-size: 12pt;
+    overflow-y:hidden;                      /* this is because bootstrap */
+    font-family: "Courier New",monospace;   /* makes a scrollbar and makes some */
+    font-size: 12pt;                        /* mess with my code */
     line-height: 14pt;
     color: #800000;
     padding-top: 14pt;
@@ -88,23 +88,64 @@ body
     font-family: Helvetica, sans-serif;
     color: #000;
     margin: 0;
-    width: 21cm;
-    padding: 1cm;
+    width: 21cm;                    /* here I set the limit of with */
+    padding: 1cm;                   /* to be an A4-page */
     margin: 1cm auto;
 
 }
 
-li[class] 
+ul[class]
+{
+    background-color: #E5E4E2; /* unordered lists get a platinum 
+                                    background */
+}
+
+ul[class="menu"]
+{
+    width: 240pt;               /* around menüs there shall be a */
+    font-size: 12pt;            /* box. the background is inherited */
+    line-height: 15pt;          /* the rows shall be single spaced */
+    border: 1pt solid;          
+    list-style-type: '➡️ ';     /* and I make fun with emojis */
+}
+
+li[class]
 {
     font-size: 100%;
 }
 
-li[class="a"] 
+li
+{
+}
+
+li[class="a"]
 {
     color: #FF0000;
+    list-style-type: '🔝 '; /* the a element in a list gets an arrow */
+                            /* to the top of the document */
 }
+
+:hover
+{
+    background-color: yellow; /* show a yellow background when hovered */
+}
+
 
 a[class="grayed"]
 {
-    color: silver;
+    color: silver          /* the text of a menu shall be grayed when */
+                             /* it makes no sense to click it*/
 }
+
+address[class]
+{
+    font-size: 12pt;
+    line-height: 24pt; /* 1.5 rows spaced */
+}
+
+address[class="small"]
+{
+    font-size:8pt;
+    line-height: 10pt; /* single spaced */
+}
+

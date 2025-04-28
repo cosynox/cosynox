@@ -2,14 +2,19 @@
 
 <html lang="en">
     <head>
-        <link href="css/bootstrap.min.css" rel="stylesheet">
-        <script src="js/bootstrap.bundle.min.js"></script>
-        <link href="styles.css" rel="stylesheet">
-        <script src="scripts.js"></script>
+            <!-- required meta tags -->
+            <meta charset="utf-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <!-- include bootstrap locally -->
+            <link href="css/bootstrap.min.css" rel="stylesheet">
+            <script src="js/bootstrap.bundle.min.js"></script>
+            <!-- my own stylesheet and javascript -->
+            <link href="styles.css" rel="stylesheet">
+            <script src="scripts.js"></script>
         <title>Gerd Koslowski</title>
     </head>
     <body>
-        <header>
+        <header id="top">
             Gerd Koslowski
         </header>
         <main>
@@ -52,21 +57,51 @@ int main (void)
             <p>
                 But, of course, you are not here to let you be greeted by this homepage.
                 I suppose, that you are here, because you'd like to know something more about me.
-                So I have here a litte menu that you can choose from:
-                <ul>
-                    <li><a href="curriculum.html">Personal data sheet</a></li>
-                    <li><a href="where.html">Where I am living</a></li>
-                    <li><a href="hobbies.html">About Hobbies</a></li>
-                    <li><a href="more.html">More interesting things about me</a></li>
-                    <li><a href="shell.html">Some Linux shell-scripts</a></li>
-                    <li><a href="https://github.com/cosynox" target="new">My github repositories</a></li>
-                    <li><a href="impressum.html">Impressum</a></li>
-                </ul>
             </p>
         </main>
         <footer>
-            Gerd Koslowski, Bahnhofstr. 37a, 76829 Landau, Germany
-            Tel. (+49) 0177-8502966
+            <p>&nbsp;</p>
+            <p>
+                So I have here a little menu for you to choose from:
+                <ul class="menu">
+                    <li class="a">
+                        <a href="#top"
+                            class="grayed"
+                        >Start page</a>
+                    </li>
+                    <li>
+                        <a href="curriculum.html"
+                        >Personal data sheet</a>
+                    </li>
+                    <li>
+                        <a href="where.html">Where I am living</a>
+                    </li>
+                    <li>
+                        <a href="hobbies.html">About Hobbies</a>
+                    </li>
+                    <li>
+                        <a href="more.html"  
+                            >More interesting things 
+                            about me</a>
+                    </li>
+                    <li>
+                        <a href="shell.html">Some Linux shell 
+                            scripts</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/cosynox" 
+                            target="new">My github repositories</a>
+                    </li>
+                    <li>
+                        <a href="impressum.html"
+                        >Impressum</a>
+                    </li>
+                </ul>
+            </p>
+            <address class="small">
+                Gerd Koslowski, Bahnhofstr. 37a, 76829 Landau, Germany,
+                phone (+49) 0177-8502966
+            </address>
         </footer>
     </body>
 </html>
