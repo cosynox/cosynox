@@ -19,13 +19,13 @@
                         /* as a reference */
 {
     font-size: 24pt;
-    line-height: 32pt;
+    line-height: 43pt;
 }
 
 .medium
 {
     font-size: 12pt;
-    line-height: 24pt;
+    line-height: 22pt;
 }
 
 .small
@@ -55,19 +55,21 @@ pre
 header
 {
     font-size: 24pt;
-    line-height: 32pt; /* 1.5 rows spaced */
+    line-height: 43pt; /* 1.5 rows spaced */
+    margin-bottom: 43pt;
 }
 
 main
 {
     font-size: 12pt;
-    line-height: 24pt; /* 1.5 rows spaced */
+    line-height: 22pt; /* 1.5 rows spaced */
+    margin-bottom: 22pt;
 }
 
 footer
 {
     font-size: 12pt;
-    line-height: 15pt; /* single spaced */
+    line-height: 16pt; /* single spaced */
 }
 
 code
@@ -76,6 +78,7 @@ code
     font-family: "Courier New",monospace;   /* makes a scrollbar and makes some */
     font-size: 12pt;                        /* mess with my code */
     line-height: 14pt;
+    margin-bottom 22pt;
     color: #800000;
     padding-top: 14pt;
     padding-right: 12pt;
@@ -94,9 +97,14 @@ body
 
 }
 
+ul
+{
+    margin-bottom: 22pt;
+}
+
 ul[class]
 {
-    background-color: #E5E4E2; /* unordered lists get a platinum 
+    background-color: #E5E4E2; /* unordered lists get a platinum
                                     background */
 }
 
@@ -105,17 +113,8 @@ ul[class="menu"]
     width: 240pt;               /* around menüs there shall be a */
     font-size: 12pt;            /* box. the background is inherited */
     line-height: 15pt;          /* the rows shall be single spaced */
-    border: 1pt solid;          
+    border: 1pt solid;
     list-style-type: '➡️ ';     /* and I make fun with emojis */
-}
-
-li[class]
-{
-    font-size: 100%;
-}
-
-li
-{
 }
 
 li[class="a"]
@@ -140,7 +139,7 @@ a[class="grayed"]
 address[class]
 {
     font-size: 12pt;
-    line-height: 24pt; /* 1.5 rows spaced */
+    line-height: 22pt; /* 1.5 rows spaced */
 }
 
 address[class="small"]
