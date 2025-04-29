@@ -33,6 +33,24 @@ document.addEventListener('DOMContentLoaded',
         let form = document.querySelector("form");
         form.addEventListener("submit", greet);
         keyecho("#name");
+        let fileName = location.href.split("/").slice(-1);
+        let now = new Date();
+        let currentTime = now.toLocaleTimeString('en-US', 
+            { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+
+        let day = String(now.getDate()).padStart(2, "0");
+        
+        let month = String(now.getMonth() + 1).padStart(2, "0");
+        
+        let year = now.getFullYear();
+        
+        let datestr  = year + "-" + month + "-" + day;
+
+        let dtstring = datestr + " " + currentTime;
+        fileName = fileName + " " + dtstring ;
+        document.querySelector("#filename").innerText = fileName;        
     }
 )
 
+
+let fileName = location.href.split("/").slice(-1);
