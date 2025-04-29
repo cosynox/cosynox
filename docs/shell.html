@@ -1,4 +1,4 @@
-<DOCTYPE html>
+<!DOCTYPE html>
     
     <html lang="en">
         <head>
@@ -85,15 +85,15 @@ exec 4>&-
                         <code>                          
 #! /bin/bash
 
-exec 3< /dev/stdin
+exec 3&lt; /dev/stdin
 
 read -n 1 -p "Press any key to begin slideshow";
 while IFS= read -r line;
 do
         echo $line
         feh -g 1024x800 --scale-down $line
-        read -n 1 -p "Press any key to continue ^C to exit" <&3
-done < $1
+        read -n 1 -p "Press any key to continue ^C to exit" &lt;&3
+done &lt; $1
                             
                         </code>
                     </pre>

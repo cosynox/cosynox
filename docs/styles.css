@@ -90,6 +90,7 @@ body
 {
     font-family: Helvetica, sans-serif;
     color: #000;
+    background-color: white;
     margin: 0;
     width: 21cm;                    /* here I set the limit of with */
     padding: 1cm;                   /* to be an A4-page */
@@ -124,7 +125,7 @@ li[class="a"]
                             /* to the top of the document */
 }
 
-:hover
+a:hover
 {
     background-color: yellow; /* show a yellow background when hovered */
 }
