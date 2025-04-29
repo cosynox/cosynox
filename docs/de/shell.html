@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+
+<html lang="de">
+    <head>
+        <!-- required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- include bootstrap locally -->
+        <link href="../css/bootstrap.min.css" rel="stylesheet">
+        <script src="../js/bootstrap.bundle.min.js"></script>
+        <!-- my own stylesheet and javascript -->
+        <link href="../styles.css" rel="stylesheet">
+        <script src="../scripts.js"></script>
+        <title>Einige Linux Shell Skripten</title>
+    </head>
+    <body>
+        <header id="top">
+            Einige Linux Shell Skripten
+            <p class="small">
+                The english version of this page is here: <a href="../shell.html">🇬🇧</a>
+            </p>
+        </header>
+        <main>
+            <h4>
+                Suche nach doppelten Dateien
+            </h4>
+            <p>
+                Zuerst präsentiere ich ein Linux-Shell-Skript, das nach
+                doppelten Dateien basierend auf ihrem Inhalt sucht. Die 
+                Idee dahinter ist, den SHA256-Hash des Datei-Inhalts zu 
+                berechnen. Wenn zwei Dateien den gleichen SHA256-Hash 
+                haben, wird davon ausgegangen, dass sie identisch sind.
+            </p>
+            <p>
+            <pre>
+                <code>
+#! /bin/bash
+# usage: dupsearch pattern
+# where pattern can be *.jpg or *.png or *.mp3 or something else
+# creates 2 temporary files
+
+tmpfile1=$(mktemp /tmp/dupjpg.XXXXXX)
+tmpfile2=$(mktemp /tmp/dupjpg.XXXXXX)
+
+# connects the files with filedescriptor 3 and 4
+exec 3>"$tmpfile1"
+exec 4>"$tmpfile2"
+
+# finds the files, calculates the SHA256-hash and sorts the file
+find . -name "$1" 2>/dev/null|xargs sha256sum -b 2>/dev/null|sort >&3 
+
+# the sorted file is in order of the hash codes, but the codes 
+# are together with the filenames. cut the codes from the filenames
+# and leave only duplicate hash codes. save them to file tmpfile2
+cut -d ' ' -f 1 "$tmpfile1"|uniq -d >&4
+
+# read the codes from the file and look for the filenames
+# the filenames are in in the position beginning after position 67 in 
+# the file
+grep -f "$tmpfile2" "$tmpfile1" | cut -c 67-
+
+# delete the temporary files and close the filedescriptors
+rm "$tmpfile1"
+rm "$tmpfile2"
+exec 3>&-
+exec 4>&-
+                </code>
+            </pre>
+            </p>
+            <p>&nbsp;</p>
+            <h4>
+                Eine Diashow aus einer Playlist anzeigen
+            </h4>
+            <p>
+                Dieses Skript zeigt eine Diashow aus einer 
+                Playlist mit Dateinamen, Zeile für Zeile, in 
+                einer Datei an. Das Interessante an dem Skript 
+                ist, dass /dev/stdin als Dateideskriptor 3 
+                geöffnet wird. Und obwohl die Eingabe für die 
+                while-Schleife auf die Datei umgeleitet wird, 
+                aus der die Playlist gelesen wird, kann man 
+                trotzdem Tastatureingaben von /dev/stdin lesen. 
+                So hat man zwei Eingabeströme. Ansonsten ist 
+                das Skript ziemlich einfach. Die Bilder werden 
+                mit feh angezeigt.
+            </p>
+            <p>
+                <pre>
+                    <code>                          
+#! /bin/bash
+
+exec 3&lt; /dev/stdin
+
+read -n 1 -p "Press any key to begin slideshow";
+while IFS= read -r line;
+do
+    echo $line
+    feh -g 1024x800 --scale-down $line
+    read -n 1 -p "Press any key to continue ^C to exit" &lt;&3
+done &lt; $1
+                        
+                    </code>
+                </pre>
+            </p>
+        </main>
+        <footer>
+            <p>
+                Hier ist wieder das kleine Menü, aus dem Sie etwas wählen können:
+                <ul class="menu">
+                    <li>
+                        <a href="index.html">Startseite</a>
+                    </li>
+                    <li>
+                        <a href="curriculum.html"
+                        >Tabellarischer Lebenslauf</a>
+                    </li>
+                    <li>
+                        <a href="where.html">Wo ich lebe</a>
+                    </li>
+                    <li>
+                        <a href="hobbies.html">Über meine Hobbys</a>
+                    </li>
+                    <li>
+                        <a href="more.html"  
+                            >Mehr Interessantes über mich</a>
+                    </li>
+                    <li class="a">
+                        <a href="#top"
+                            class="grayed"
+                        >Einige Linux Shell Skripten</a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/cosynox" 
+                            target="new">Meine github Ablagen</a>
+                    </li>
+                    <li>
+                        <a href="impressum.html">Impressum</a>
+                    </li>
+                </ul>
+            </p>
+            <address class="small">
+                Gerd Koslowski, Bahnhofstr. 37a, 76829 Landau, Deutschland,
+                Mobil (+49) 0177-8502966
+            </address>
+            <p id="filename" class="small"></p>
+        </footer>
+    </body>
+</html>
+    
+        
