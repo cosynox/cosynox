@@ -1,0 +1,127 @@
+Specification:
+
+HTML
+
+HTML-Tags, that I have used besides 
+<html><head><body> and <title>:
+<link>
+<script>
+<header>
+<main>
+<p>
+<pre>
+<code>
+<form>
+<input>
+<ul>
+<li>
+<a href...>
+<footer>
+<h4>
+<div>
+<img>
+<address>
+<br>
+
+CSS
+
+As different CSS selectors I used:
+.centered
+.left
+.right
+to position my text according to the class names. 
+There I used the property text-align
+Then I used the classes
+.large
+.medium
+.small
+to exactly specify the points of the font-sizeand the line-height
+I had the idea to use a 12 pt font for normal text, a 24 pt font
+for large text and a 8 pt font for small text. 
+My idea is to have a very traditional layout, like on a A4
+paper page. And so I modified the body tag to use a 12 pt 
+Helvetica font as a standard and a line-height of 24 pt. That 
+means that I get a 1.5 lines distance between the lines. 
+Everywhere I worked with a 1.5 lines distance. So I ensured a 
+very good readability of the text. 
+My standard should be A4 width and a 12 pt font and 1,5 lines
+distance between the lines.
+body
+I used the attributes
+font-family
+color
+width
+padding
+margin
+and I defined the fonts in the 
+header
+main
+footer
+with the attributes
+font-size
+line-height
+Special considerations I had to make for the redefinition
+of the code and the pre tag because bootstrap destroyed 
+all my formatting. It was not easy to get back the Courier
+font, my color and a normal appearance of the code.
+I used the attributes
+overflow-y to eliminate the scroll bootstrap
+and with the attributes
+font-family
+font-size and
+line-height I tried to get back a normal appearance of
+the code. 
+I used the color #800000 to get a distinct visual appearance
+of the code that is still good readable and a web safe color.
+With 
+padding-top
+padding-right
+padding-bottom
+padding-left
+I tried to overwrite the mess that bootstrap caused on my page.
+
+Then I modified the li - tag in order to make it possible
+to give the menu item of the page that I am just visiting
+a read dot. When the li - tag has the attribute class="a" 
+then it should become read. For that I used the 
+color
+attribute. 
+
+And I modified the ul - tag so that it creates a menu with
+a gray background and a box, and it hovers over the menu items.
+I made a class="menu" attribute.
+
+In order to indicate that a selection makes no sense, I modified
+the a - tag and invented a class attribute "grayed".
+
+I modified the <p>-tag with a class="small" to make it possible 
+to have small letters.
+
+Javascript
+
+Concerning javascript, I made a function that greets the
+visitor on the page with his name.
+
+And I write at the end of each page the name of the file and 
+date and time when the page has been delivered.
+
+Bootstrap 
+
+I used bootstrap to especially layout the file curriculum.html
+in a two column layout that suits for a personal data sheet.
+
+Bootstrap was also used to style the images in various files.
+
+Bootstrap was everywhere used in the body with the 
+class="container" to enable a flexible display when a smaller
+display would be used. At least as far as possible. I normally
+would want a A4 layout.
+
+Bootstrap has disturbed my layout of code in the <code>-tag. 
+It makes things, that I don't want. For example, it indents 
+the code regardless of what I define in my own stylesheet.
+I have found no way to get around this.
+
+
+
+
