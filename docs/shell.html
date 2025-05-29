@@ -14,33 +14,66 @@
 
             <!-- include bootstrap locally -->
             <link href="css/bootstrap.min.css" rel="stylesheet">
-            <script src="js/bootstrap.bundle.min.js"></script>
             <!-- my own stylesheet and javascript -->
             <link href="styles.css" rel="stylesheet">
             <script src="scripts.js"></script>
             <title>Some Linux Shell Scripts</title>
         </head>
         <body>
-            <header id="top">
-                Some Linux shell scripts
-                <p class="small">
-                    Die deutsche Version der Seite befindet sich hier: <a href="de/shell.html">🇩🇪</a>
-                </p>
+            <div class="container">
+                <header id="top">
+
+                    <!-- Hinweis auf deutsche Sprachversion -->
+                    <p class="small right">
+                        Die deutsche Version der Seite befindet sich hier: <a href="de/shell.html">🇩🇪</a>
+                    </p>
+
+                    <!-- Menu on top of the page begin -->
+                    <nav class="hmenu">
+                        <ul class="hlist">
+                            <li class="a hitem">
+                                <a href="index.html"
+                                >Start page</a>
+                            </li>
+                            <li class="hitem">
+                                <a href="curriculum.html"
+                                >Data sheet</a>
+                            </li>
+                            <li class="hitem">
+                                <a href="where.html">Where</a>
+                            </li>
+                            <li class="hitem">
+                                <a href="hobbies.html">Hobbies</a>
+                            </li>
+                            <li class="hitem">
+                                <a href="more.html"  
+                                    >More</a>
+                            </li>
+                            <li class="hitem">
+                                <a href="#top"
+                                    class="grayed"
+                                >Stuff</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Menu on top of the page end -->
+
                 </header>
-            <main>
-                <h4>
-                    Search for duplicate files
-                </h4>
-                <p>
-                    At first, I present a linux shell script to search for 
-                    duplicate files based on their content. The idea is to 
-                    calculate the SHA256 Hash from the file content. If two
-                    files have the same SHA256 Hash then they are supposed
-                    to be identical.
-                </p>
-                <p>
-                <pre>
-                    <code>
+                <main>
+                    <H1>Some Linux shell scripts</H1>
+                    <h4>
+                        Search for duplicate files
+                    </h4>
+                    <p>
+                        At first, I present a linux shell script to search for 
+                        duplicate files based on their content. The idea is to 
+                        calculate the SHA256 Hash from the file content. If two
+                        files have the same SHA256 Hash then they are supposed
+                        to be identical.
+                    </p>
+                    <p>
+                    <pre>
+                        <code>
 #! /bin/bash
 # usage: dupsearch pattern
 # where pattern can be *.jpg or *.png or *.mp3 or something else
@@ -71,28 +104,28 @@ rm "$tmpfile1"
 rm "$tmpfile2"
 exec 3>&-
 exec 4>&-
-                    </code>
-                </pre>
-                </p>
-                <p>&nbsp;</p>
-                <h4>
-                    Display a slideshow from a playlist
-                </h4>
-                <p>
-                    This script displays a slideshow from a playlist
-                    with filenames, line by line, in a file.
-                    The interesting in the file is, that /dev/stdin
-                    is opened as a filedescriptor 3 and despite
-                    the input for the while loop is redirected to 
-                    the file from which the playlist is read, one
-                    can get keystrokes for read from /dev/stdin.
-                    So you have two input streams.
-                    The script is else rather straightforward. 
-                    The pictures are displayed with feh.
-                </p>
-                <p>
-                    <pre>
-                        <code>                          
+                        </code>
+                    </pre>
+                    </p>
+                    <p>&nbsp;</p>
+                    <h4>
+                        Display a slideshow from a playlist
+                    </h4>
+                    <p>
+                        This script displays a slideshow from a playlist
+                        with filenames, line by line, in a file.
+                        The interesting in the file is, that /dev/stdin
+                        is opened as a filedescriptor 3 and despite
+                        the input for the while loop is redirected to 
+                        the file from which the playlist is read, one
+                        can get keystrokes for read from /dev/stdin.
+                        So you have two input streams.
+                        The script is else rather straightforward. 
+                        The pictures are displayed with feh.
+                    </p>
+                    <p>
+                        <pre>
+                            <code>                          
 #! /bin/bash
 
 exec 3&lt; /dev/stdin
@@ -105,52 +138,53 @@ do
         read -n 1 -p "Press any key to continue ^C to exit" &lt;&3
 done &lt; $1
                             
-                        </code>
-                    </pre>
-                </p>
-            </main>
-            <footer>
-                <p>
-                    Here is again the little menu for you to choose from:
-                    <ul class="menu">
-                        <li>
-                            <a href="index.html">Start page</a>
-                        </li>
-                        <li>
-                            <a href="curriculum.html"
-                            >Personal data sheet</a>
-                        </li>
-                        <li>
-                            <a href="where.html">Where I am living</a>
-                        </li>
-                        <li>
-                            <a href="hobbies.html">About Hobbies</a>
-                        </li>
-                        <li>
-                            <a href="more.html"  
-                                >More interesting things 
-                                about me</a>
-                        </li>
-                        <li class="a">
-                            <a href="#top"
-                                class="grayed"
-                            >Some Linux shell scripts</a>
-                        </li>
-                        <li>
-                            <a href="https://github.com/cosynox" 
-                                target="new">My github repositories</a>
-                        </li>
-                        <li>
-                            <a href="impressum.html">Impressum</a>
-                        </li>
-                    </ul>
-                </p>
-                <address class="small">
-                    Gerd Koslowski, Bahnhofstr. 37a, 76829 Landau, Germany,
-                    phone (+49) 0177-8502966
-                </address>
-                <p id="filename" class="small"></p>
-            </footer>
+                            </code>
+                        </pre>
+                    </p>
+                </main>
+                <footer>
+                    <p>
+                        Here is again the little menu for you to choose from:
+                        <ul class="menu">
+                            <li>
+                                <a href="index.html">Start page</a>
+                            </li>
+                            <li>
+                                <a href="curriculum.html"
+                                >Personal data sheet</a>
+                            </li>
+                            <li>
+                                <a href="where.html">Where I am living</a>
+                            </li>
+                            <li>
+                                <a href="hobbies.html">About Hobbies</a>
+                            </li>
+                            <li>
+                                <a href="more.html"  
+                                    >More interesting things 
+                                    about me</a>
+                            </li>
+                            <li class="a">
+                                <a href="#top"
+                                    class="grayed"
+                                >Some Linux shell scripts</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/cosynox" 
+                                    target="new">My github repositories</a>
+                            </li>
+                            <li>
+                                <a href="impressum.html">Impressum</a>
+                            </li>
+                        </ul>
+                    </p>
+                    <address class="small">
+                        Gerd Koslowski, Bahnhofstr. 37a, 76829 Landau, Germany,
+                        phone (+49) 0177-8502966
+                    </address>
+                    <p id="filename" class="small"></p>
+                </footer>
+            </div>
         </body>
     </html>
     

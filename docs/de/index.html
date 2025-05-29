@@ -14,25 +14,60 @@
 
         <!-- include bootstrap locally -->
         <link href="../css/bootstrap.min.css" rel="stylesheet">
-        <script src="../js/bootstrap.bundle.min.js"></script>
         <!-- my own stylesheet and javascript -->
         <link href="../styles.css" rel="stylesheet">
         <script src="../scripts.js"></script>
         <title>Gerd Koslowski</title>
     </head>
     <body>
-        <header id="top">
-            Gerd Koslowski
-            <p class="small">
-                The english version of this page is here: <a href="../index.html">🇬🇧</a>
-            </p>
-        </header>
-        <main>
+        <div class="container">
+            <header id="top">
 
-            Willkommen auf meiner Homepage
+                <!-- Hinweis auf deutsche Sprachversion -->
+                <p class="small right">
+                    The english version of this page is here: <a href="../index.html">🇬🇧</a>
+                </p>
 
+                <!-- Menu on top of the page begin -->
+                <nav class="hmenu">
+                    <ul class="hlist">
+                        <li class="a hitem">
+                            <a href="#top"
+                                class="grayed"
+                            >Startseite</a>
+                        </li>
+                        <li class="hitem">
+                            <a href="curriculum.html"
+                            >Lebenslauf</a>
+                        </li>
+                        <li class="hitem">
+                            <a href="where.html"
+                            >Wo ich lebe</a>
+                        </li>
+                        <li class="hitem">
+                            <a href="hobbies.html"
+                            >Hobbys</a>
+                        </li>
+                        <li class="hitem">
+                            <a href="more.html"  
+                                >Mehr</a>
+                        </li>
+                        <li class="hitem">
+                            <a href="shell.html">Sonstiges</a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- Menu on top of the page end -->
 
-            <p>
+            </header>
+
+            <main>
+                <h1>Gerd Koslowski</h1>
+                <p>
+                    Willkommen auf meiner Homepage
+                </p>
+
+                <p>
 <!-- Here comes the hello world c-program -->
                 <pre><code>
 #include &#060;stdio.h&#062;
@@ -43,83 +78,84 @@ int main (void)
 }
                 </code></pre>
 <!-- End of the program code -->
-            </p>
+                </p>
 
-            <p>
-                So begrüße ich Sie hier zunächst einmal
-                als Besucher meiner Seiten.
-                Damit ich Sie mit Ihrem Namen ansprechen
-                kann, geben Sie ihn bitte in das Formular
-                ein.
-            </p>
+                <p>
+                    So begrüße ich Sie hier zunächst einmal
+                    als Besucher meiner Seiten.
+                    Damit ich Sie mit Ihrem Namen ansprechen
+                    kann, geben Sie ihn bitte in das Formular
+                    ein.
+                </p>
 
-            <p>
-                <form >
-                    <input  autocomplete="off" 
-                            autofocus id="name" 
-                            name="name" 
-                            placeholder="Name" 
-                            type="text">
+                <p>
+                    <form >
+                        <input  autocomplete="off" 
+                                autofocus id="name" 
+                                name="name" 
+                                placeholder="Name" 
+                                type="text">
 
-                    <input type="submit">
+                        <input type="submit">
 
-                </form>
-            </p>
-            <p id="antwort"></p>
-            <p>
-                Aber Sie sind natürlich nicht hier, um sich von meiner Homepage
-                begrüßen zu lassen.
-                Ich nehme an, Sie sind hier, weil Sie gerne etwas mehr über mich
-                erfahren möchten.
-            </p>
-        </main>
-        <footer>
-            <p>
-                So habe ich hier ein kleines Menü aus dem Sie wählen können:
-                <ul class="menu">
-                    <li class="a">
-                        <a href="#top"
-                            class="grayed"
-                        >Startseite</a>
-                    </li>
-                    <li>
-                        <a href="curriculum.html"
-                        >Tabellarischer Lebenslauf</a>
-                    </li>
-                    <li>
-                        <a href="where.html">Wo ich lebe</a>
-                    </li>
-                    <li>
-                        <a href="hobbies.html">Über meine Hobbys</a>
-                    </li>
-                    <li>
-                        <a href="more.html"  
-                            >Mehr Interessantes über mich</a>
-                    </li>
-                    <li>
-                        <a href="shell.html">Einige Linux Shell 
-                            Skripten</a>
-                    </li>
-                    <li>
-                        <a href="https://github.com/cosynox" 
-                            target="new">Meine github Ablagen</a>
-                    </li>
-                    <li>
-                        <a href="impressum.html"
-                        >Impressum</a>
-                    </li>
-                    <li>
-                        <a href="Datenschutzerklaerung.html" 
-                            target="new">Datenschutzerklärung</a>
-                    </li>
-                </ul>
-            </p>
-            <address class="small">
-                Gerd Koslowski, Bahnhofstr. 37a, 76829 Landau, Deutschland,
-                Mobil (+49) 0177-8502966
-            </address>
-            <p id="filename" class="small"></p>
-        </footer>
+                    </form>
+                </p>
+                <p id="antwort"></p>
+                <p>
+                    Aber Sie sind natürlich nicht hier, um sich von meiner Homepage
+                    begrüßen zu lassen.
+                    Ich nehme an, Sie sind hier, weil Sie gerne etwas mehr über mich
+                    erfahren möchten.
+                </p>
+            </main>
+            <footer>
+                <p>
+                    So habe ich hier ein kleines Menü aus dem Sie wählen können:
+                    <ul class="menu">
+                        <li class="a">
+                            <a href="#top"
+                                class="grayed"
+                            >Startseite</a>
+                        </li>
+                        <li>
+                            <a href="curriculum.html"
+                            >Tabellarischer Lebenslauf</a>
+                        </li>
+                        <li>
+                            <a href="where.html">Wo ich lebe</a>
+                        </li>
+                        <li>
+                            <a href="hobbies.html">Über meine Hobbys</a>
+                        </li>
+                        <li>
+                            <a href="more.html"  
+                                >Mehr Interessantes über mich</a>
+                        </li>
+                        <li>
+                            <a href="shell.html">Einige Linux Shell 
+                                Skripten</a>
+                        </li>
+                        <li>
+                            <a href="https://github.com/cosynox" 
+                                target="new">Meine github Ablagen</a>
+                        </li>
+                        <li>
+                            <a href="impressum.html"
+                            >Impressum</a>
+                        </li>
+                        <li>
+                            <a href="Datenschutzerklaerung.html" 
+                                target="new">Datenschutzerklärung</a>
+                        </li>
+                    </ul>
+                </p>
+                <address class="small">
+                    Gerd Koslowski, Bahnhofstr. 37a, 76829 Landau, Deutschland,
+                    Mobil (+49) 0177-8502966
+                </address>
+                <p id="filename" class="small"></p>
+            </footer>
+        </div>
     </body>
 </html>
 
